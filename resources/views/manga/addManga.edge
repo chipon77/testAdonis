@@ -1,0 +1,27 @@
+@layout('layout')
+@section('content')
+
+<div class="job-container">
+    <form action="{{ route('storeManga') }}" method="POST">
+        {{ csrfField() }}
+
+        <label>Title</label>
+        <input type="text" name="title">
+        @if(hasErrorFor('title'))
+        <span>
+                {{ getErrorFor('title') }}
+            </span>
+        @endif
+        <label>Author</label>
+        <input name="author">
+        @if(hasErrorFor('author'))
+        <span>
+                {{ getErrorFor('author') }}
+            </span>
+        @endif
+        <label>Editor</label>
+        <input name="editor">
+        <button type="submit">Join now</button>
+    </form>
+</div>
+@endsection

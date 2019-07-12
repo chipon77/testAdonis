@@ -1,0 +1,8 @@
+{
+    "greeting": "Hello",
+    "home": "Home",
+    "login": "Login",
+    "logout": "Logout",
+    "add_manga": "Add manga",
+    "websocket": "Websocket"
+}

@@ -1,0 +1,57 @@
+{
+    "name": "adonis-fullstack-app",
+    "version": "4.1.0",
+    "adonis-version": "4.1.0",
+    "description": "The fullstack application boilerplate for Adonisjs",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server.js",
+        "test": "node ace test",
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "keywords": [
+        "adonisjs",
+        "adonis-app"
+    ],
+    "author": "",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@adonisjs/ace": "^5.0.8",
+        "@adonisjs/ally": "^2.1.3",
+        "@adonisjs/antl": "^2.0.7",
+        "@adonisjs/auth": "^3.0.7",
+        "@adonisjs/bodyparser": "^2.0.5",
+        "@adonisjs/cors": "^1.0.7",
+        "@adonisjs/fold": "^4.0.9",
+        "@adonisjs/framework": "^5.0.9",
+        "@adonisjs/ignitor": "^2.0.8",
+        "@adonisjs/lucid": "^6.1.3",
+        "@adonisjs/session": "^1.0.27",
+        "@adonisjs/shield": "^1.0.8",
+        "@adonisjs/validator": "^5.0.6",
+        "@adonisjs/websocket": "^1.0.11",
+        "@adonisjs/websocket-client": "^1.0.9",
+        "@babel/polyfill": "^7.4.4",
+        "bootstrap": "^4.3.1",
+        "jquery": "^3.4.1",
+        "laravel-mix": "^4.0.16",
+        "mysql": "^2.17.1",
+        "popper.js": "^1.15.0"
+    },
+    "devDependencies": {
+        "resolve-url-loader": "^2.3.1",
+        "sass": "^1.22.3",
+        "sass-loader": "^7.1.0",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "autoload": {
+        "App": "./app"
+    }
+}

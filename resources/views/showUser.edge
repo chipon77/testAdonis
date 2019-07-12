@@ -1,0 +1,19 @@
+@layout('layout')
+@section('content')
+<form action="{{ route('userEdit') }}" method="post">
+    {{ csrfField() }}
+    {{auth.user.id}}
+    <input type="text" name="username" value="{{auth.user.username}}">
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+{{auth.user.username}}
+<form action="{{ route('linkManga') }}" method="post">
+    {{ csrfField() }}
+    <select class="browser-default custom-select custom-select-lg mb-3" name="manga[]" multiple>
+        @each(manga in mangas)
+        <option value="{{manga.id}}">{{manga.title}}</option>
+        @endeach
+    </select>
+    <button type="submit" class="btn btn-primary">Link</button>
+</form>
+@endsection

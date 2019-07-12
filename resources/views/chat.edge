@@ -1,0 +1,42 @@
+@layout('layout')
+@section('content')
+<body>
+    <div class="chat-container">
+        <div class="chat-wrapper">
+            <div class="header">
+                <h2>
+                    <span>Hello {{ auth.user.username }}!</span>
+                    <span class="connected-users"></span>
+                    <span class="connection-status"></span>
+                </h2>
+            </div>
+            <div class="messages">
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="message" placeholder="Enter message" autofocus=1>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.username = '{{ auth.user.username }}'
+        window.usernameID = '{{ auth.user.id }}'
+    </script>
+</body>
+@endsection
+
+@section('script')
+{{ script('https://unpkg.com/@adonisjs/websocket-client@1.0.9/dist/Ws.browser.js') }}
+<script>
+    $.ajax({
+        url: "{{route('getMessages')}}",
+        data: {},
+        dataType: 'json',
+        success: function (response) {
+            response.forEach(function (element) {
+                console.log(element);
+                $('.messages').append('<div class="message"><h3>' + element.content + ' </h3> <p>' + element.content + '</p> </div>');
+            });
+        },
+    });
+</script>
+@endsection

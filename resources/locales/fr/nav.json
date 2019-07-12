@@ -1,0 +1,9 @@
+{
+    "greeting": "Bonjour",
+    "home": "Accueil",
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "add_manga": "Ajouté manga",
+    "signup": "Nouveau utilisateur",
+    "websocket": "Websocket"
+}

@@ -1,0 +1,8 @@
+@layout('layout')
+@section('content')
+<ul>
+    @each(manga in mangas)
+    <a href="{{ route('show', { id: manga.id }) }}">{{manga.title}}</a>
+    @endeach
+</ul>
+@endsection
